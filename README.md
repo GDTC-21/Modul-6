@@ -76,8 +76,25 @@ sprite sheet adalah gambar yang panjang dan berisi banyak sprite
 
 ### logic animation
 
-1. 
+1. di dalam script Player.cs diberi attribute private Animator
+``` c#
+private Animator _animator;
+```
 
+2. kemudian di fungsi Start() di inisiasi
+``` c#
+_animator = GetComponent<Animator>();
+```
+
+3. di fungsi update beri logic, jika player bergerak boolean IsMoving menjadi true 
+``` c#
+
+if (_rigidbody.velocity.magnitude > 0)
+  _animator.SetBool("IsWalking", true);
+else
+  _animator.SetBool("IsWalking", false);
+```
+4. kemudian coba play game nya.
 
 
 
